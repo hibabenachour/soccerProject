@@ -1,0 +1,74 @@
+<section style="padding: 100px; " class="regervation_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+
+                    <h2>{{title}}</h2>
+                    <!-- <h2 *ngIf="test">hello</h2> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form [formGroup]="playerForm">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="First Name" formControlName="firstName" [(ngModel)]="player.firstName">
+                                <div *ngIf="playerForm.controls['firstName'].invalid && (playerForm.controls['firstName'].dirty ||playerForm.controls['firstName'].touched)">
+                                    <div *ngIf="playerForm.controls['firstName'].errors.required" class="text-danger">First name is required</div>
+                                    <div *ngIf="playerForm.controls['firstName'].errors.minlength" class="text-danger">First name must have agt least 3 characters</div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Last Name" formControlName="lastName" [(ngModel)]="player.lastName">
+                                <div *ngIf="playerForm.controls['lastName'].invalid && (playerForm.controls['lastName'].dirty ||playerForm.controls['lastName'].touched)">
+                                    <div *ngIf="playerForm.controls['lastName'].errors.required" class="text-danger">last name is required</div>
+                                    <div *ngIf="playerForm.controls['lastName'].errors.minlength" class="text-danger">last name must have at least 5 characters</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" id="inputEmail4" placeholder="Post" formControlName="post" [(ngModel)]="player.post">
+                                <div *ngIf="playerForm.controls['lastName'].invalid && (playerForm.controls['lastName'].dirty ||playerForm.controls['lastName'].touched)">
+                                    <div *ngIf="playerForm.controls['lastName'].errors.required" class="text-danger">Post is required</div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <input type="team" class="form-control" id="team" placeholder="team *" formControlName="team" [(ngModel)]="player.team">
+                                <div *ngIf="playerForm.controls['team'].invalid && (playerForm.controls['team'].dirty ||playerForm.controls['team'].touched)">
+                                    <div *ngIf="playerForm.controls['team'].errors.required" class="text-danger">team is required</div>
+                                    <div *ngIf="playerForm.controls['team'].errors.minlength" class="text-danger">team must have at least 3 characters</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="nTshirt" class="form-control" id="nTshirt" placeholder="nTshirt *" formControlName="nTshirt" [(ngModel)]="player.nTshirt">
+                                <div *ngIf="playerForm.controls['nTshirt'].invalid && (playerForm.controls['nTshirt'].dirty ||playerForm.controls['nTshirt'].touched)">
+                                    <div *ngIf="playerForm.controls['nTshirt'].errors.required" class="text-danger">num Tshirt is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="date" class="form-control" id="dateOfBirth" placeholder="dateOfBirth *" formControlName="dateOfBirth" [(ngModel)]="player.dateOfBirth">
+                                <div *ngIf="playerForm.controls['dateOfBirth'].invalid && (playerForm.controls['dateOfBirth'].dirty ||playerForm.controls['dateOfBirth'].touched)">
+                                    <div *ngIf="playerForm.controls['dateOfBirth'].errors.required" class="text-danger">date of birth is required</div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="regerv_btn">
+                            <button (click)="savePlayer()" class="btn_4">{{title}}</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
